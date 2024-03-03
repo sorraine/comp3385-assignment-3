@@ -12,7 +12,7 @@
 
     @foreach ($clients as $client)
     <div class="card text-center">
-        <img src="{{ url($client->company_logo) }}" alt="" class="card-img-top">
+        <img src="{{ url('storage/' . $client->company_logo) }}" alt="" class="card-img-top">
         <div class="card-body">
             <h4 class-title>{{ $client->name }}</h4>
             <p class="card-text">
