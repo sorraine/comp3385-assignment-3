@@ -31,7 +31,7 @@ class ClientController extends Controller
             ]);
 
             $companylogo = $request->file('companylogo');
-            $filename = time() . '.' . $companylogo->getClientOriginalExtension();
+            $filename = time() . '.' . $companylogo->getClientOriginalExtension(); /**Credits to Fabian Bertrand */
             $path = $companylogo->storeAs('company_logos', $filename, 'public');
     
             $client = new Client();

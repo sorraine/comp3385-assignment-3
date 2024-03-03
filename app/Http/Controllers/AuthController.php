@@ -34,4 +34,14 @@ class AuthController extends Controller
         return redirect('/dashboard')->with('success', 'Login successful');
 
     }
+
+    public function logout(Request $request) : RedirectResponse
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/')->with('success', 'User successfully logged out');
+    }
+    
 }

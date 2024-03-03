@@ -35,5 +35,8 @@ Route::get('/login', [AuthController::class, 'create'])->name('login');
 // Route for processing the login form
 Route::post('/login', [AuthController::class, 'store'])->name('login.store');
 
-Route:: get('/clients/add',[ClientController::class, 'add']) -> middleware('auth');
+Route:: get('/clients/add',[ClientController::class, 'add']) -> middleware('auth') ->name('clients.create');
 Route:: POST('/clients',[ClientController::class, 'requestclients']) -> middleware('auth');
+
+Route::get('/logout', [AuthController::class, 'logout']);
+
