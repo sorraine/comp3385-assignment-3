@@ -3,7 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-
+use App\Http\Controllers\ClientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +34,6 @@ Route::get('/login', [AuthController::class, 'create'])->name('login');
 
 // Route for processing the login form
 Route::post('/login', [AuthController::class, 'store'])->name('login.store');
+
+Route:: get('/clients/add',[ClientController::class, 'add']) -> middleware('auth');
+Route:: POST('/clients',[ClientController::class, 'requestclients']) -> middleware('auth');

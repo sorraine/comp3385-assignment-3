@@ -16,7 +16,7 @@
  </div>
 @endif
 
-        <form method="POST" action="{{ url('/feedback/send') }}">
+        <form method="POST" action="{{ url('/login') }}">
             @csrf
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="mb-3">
